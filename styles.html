@@ -12,6 +12,12 @@ $endif$
   color: $if(fontcolor)$$fontcolor$$else$black$endif$;
   background-color: $if(backgroundcolor)$$backgroundcolor$$else$white$endif$;
 }
+@media (prefers-color-scheme: dark) {
+  html {
+    color: white;
+    background-color: black;
+  }
+}
 body {
   margin: 0 auto;
   max-width: $if(maxwidth)$$maxwidth$$else$36em$endif$;
@@ -59,8 +65,21 @@ a {
 a:visited {
   color: $if(linkcolor)$$linkcolor$$else$black$endif$;
 }
+@media (prefers-color-scheme: dark) {
+  a {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+}
 img {
   max-width: 100%;
+}
+@media (prefers-color-scheme: dark) {
+  img.black-line-art {
+    filter: invert(1);
+  }
 }
 svg {
   height: auto;
@@ -88,6 +107,12 @@ blockquote {
   padding-left: 1em;
   border-left: 2px solid #e6e6e6;
   color: #606060;
+}
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    border-left-color: #0a0a0a;
+    color: #a0a0a0;
+  }
 }
 $if(abstract)$
 div.abstract {
@@ -159,6 +184,15 @@ tbody {
 th {
   border-top: 1px solid $if(fontcolor)$$fontcolor$$else$black$endif$;
   padding: 0.25em 0.5em 0.25em 0.5em;
+}
+@media (prefers-color-scheme: dark) {
+  tbody {
+    border-top-color: white;
+    border-bottom-color: white;
+  }
+  th {
+    border-top-color: white;
+  }
 }
 td {
   padding: 0.125em 0.5em 0.25em 0.5em;
